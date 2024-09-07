@@ -28,8 +28,8 @@ def discover(initial_path):
     ]
 
     for dirpath, dirs, files in os.walk(initial_path):
-        for __file in files:
-            absolute_path = os.path.abspath(os.path.join(dirpath, _file))
+        for data in files:
+            absolute_path = os.path.abspath(os.path.join(dirpath, data))
             ext = absolute_path.split('.')[-1]
 
             if ext in extensions:
@@ -37,8 +37,8 @@ def discover(initial_path):
 
 #Isto só é executado quando executa o modulo diretamente
 
-     if __name __  ==  '__main__':
-       x = discover(os.getcwd())
+if __name__ == '__main__':
+    x = discover(os.getcwd())
 
-       for i in x:
-           print(i) 
+    for i in x:
+        print(i) 

